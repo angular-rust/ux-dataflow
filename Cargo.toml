@@ -1,0 +1,19 @@
+[package]
+name = "ux-dataflow"
+version = "0.1.0"
+authors = ["Victor Dudochkin <dudochkin.victor@gmail.com>", "Maksim Makarov <pr0n1x@yandex.ru>"]
+readme = "README.md"
+homepage = "https://angular-rust.github.io/ux-dataflow"
+repository = "https://github.com/angular-rust/ux-dataflow"
+documentation = "https://docs.rs/ux-dataflow"
+description = "Data Processing Library"
+keywords = ["datatable", "dataframe", "datastream", "data-structures"]
+categories = ["data-structures"]
+edition = "2018"
+license = "MPL-2.0"
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+intmap = "0.7"
