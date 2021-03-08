@@ -19,8 +19,6 @@
 
 Angular Rust is a high productivity, frontend web framework for the [Rust language](https://www.rust-lang.org/).
 
-Current Version: 0.1.0 (2021-03-01)
-
 ## Quick Start
 
 Install Angular Rust:
