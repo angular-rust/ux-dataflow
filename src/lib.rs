@@ -5,9 +5,9 @@
 use intmap::IntMap;
 use std::{collections::HashMap, fmt};
 
-pub mod row;
-pub mod collumn;
 pub mod collection;
+pub mod collumn;
+pub mod row;
 
 #[derive(Clone, Debug)]
 pub struct Channel<'a> {
@@ -32,8 +32,8 @@ pub struct DataCellChangeRecord<T>
 where
     T: fmt::Display,
 {
-    pub row_index: i64,
-    pub column_index: i64,
+    pub row_index: usize,
+    pub column_index: usize,
     pub old_value: T,
     pub new_value: T,
 }
@@ -42,7 +42,7 @@ impl<T> DataCellChangeRecord<T>
 where
     T: fmt::Display,
 {
-    fn new(row_index: i64, column_index: i64, old_value: T, new_value: T) -> Self {
+    fn new(row_index: usize, column_index: usize, old_value: T, new_value: T) -> Self {
         Self {
             row_index,
             column_index,
@@ -95,7 +95,7 @@ impl fmt::Display for DataCollectionChangeRecord {
 pub trait TableEntity {}
 
 #[derive(Clone)]
-pub struct DataStream<'a, M, D> 
+pub struct DataStream<'a, M, D>
 where
     M: fmt::Display,
     D: fmt::Display,
@@ -111,27 +111,27 @@ where
     // rowsChangeController: StreamController<DataCollectionChangeRecord>,
 }
 
-impl<'a, M, D> Default for DataStream<'a, M, D> 
+impl<'a, M, D> Default for DataStream<'a, M, D>
 where
     M: fmt::Display,
     D: fmt::Display,
 {
     fn default() -> Self {
-        Self{
+        Self {
             meta: Vec::new(),
             frames: Vec::new(),
         }
     }
 }
 
-impl<'a, M, D> DataStream<'a, M, D> 
+impl<'a, M, D> DataStream<'a, M, D>
 where
     M: fmt::Display,
     D: fmt::Display,
 {
     /// Creates a [DataTable] with optional data [data].
     ///
-    /// * 'metadata' - contains row names
+    /// * 'meta' - contains row names
     ///
     /// The first row in [data] contains the column names.
     /// The data type of each column is determined by the first non-null value
@@ -140,7 +140,7 @@ where
     /// All values in each column are expected to be of the same type,
     /// and all rows are expected to have the same length.
     // data is optional
-    pub fn new(metadata: Vec<Channel>, data: Vec<DataFrame<M, D>>) -> Self {
+    pub fn new(meta: Vec<Channel<'a>>, frames: Vec<DataFrame<M, D>>) -> Self {
         // let data_table = DataTable {
         //     // column_index_by_name: Default::default(),
         //     // columns: None,
@@ -161,7 +161,7 @@ where
         // }
 
         // rows.add_all(data);
-        unimplemented!()
+        Self { meta, frames }
     }
 
     fn on_cell_changed(row_index: i64, column_index: i64, old_value: String, new_value: String) {
@@ -269,7 +269,6 @@ where
     //   return list;
     // }
 }
-
 
 #[cfg(test)]
 mod tests {
