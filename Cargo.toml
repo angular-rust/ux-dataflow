@@ -15,5 +15,8 @@ license = "MPL-2.0"
 [badges]
 maintenance = { status = "actively-developed" }
 
+[lib]
+name = "dataflow"
+
 [dependencies]
 intmap = "0.7"
