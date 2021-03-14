@@ -98,7 +98,7 @@ pub trait TableEntity {}
 pub struct DataStream<'a, M, D>
 where
     M: fmt::Display,
-    D: fmt::Display,
+    D: fmt::Display + Copy,
 {
     pub meta: Vec<Channel<'a>>,
     // data is renamed to frames
@@ -114,7 +114,7 @@ where
 impl<'a, M, D> Default for DataStream<'a, M, D>
 where
     M: fmt::Display,
-    D: fmt::Display,
+    D: fmt::Display + Copy,
 {
     fn default() -> Self {
         Self {
@@ -127,7 +127,7 @@ where
 impl<'a, M, D> DataStream<'a, M, D>
 where
     M: fmt::Display,
-    D: fmt::Display,
+    D: fmt::Display + Copy,
 {
     /// Creates a [DataTable] with optional data [data].
     ///
