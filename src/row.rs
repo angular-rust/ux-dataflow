@@ -11,7 +11,7 @@ impl<T> TableEntity for DataRow<T> {}
 
 impl<T> DataRow<T> {
     /// Converts a column index or name to an index.
-    fn to_index(column_index_or_name: i64) -> i64 {
+    fn to_index(&self, column_index_or_name: i64) -> i64 {
         // if (columnIndexOrName is int) return columnIndexOrName;
         // return table.columnIndexByName[columnIndexOrName];
         unimplemented!()
