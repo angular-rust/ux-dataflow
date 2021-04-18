@@ -1,13 +1,14 @@
 <div align="center">
 
-![Star a repo](https://dudochkin-victor.github.io/assets/ux-dataflow/logo-wide.svg)
+[![](https://dudochkin-victor.github.io/assets/ux-dataflow/logo-wide.svg)](#top)
 # UX Dataflow
 
 [![API Docs][docrs-badge]][docrs-url]
 [![Crates.io][crates-badge]][crates-url]
+[![Code coverage][codecov-badge]][codecov-url]
+[![Tests][tests-badge]][tests-url]
 [![MPL-2.0 licensed][license-badge]][license-url]
 [![Gitter chat][gitter-badge]][gitter-url]
-[![Rustc Version 1.45+][rust-badge]][rust-url]
 [![loc][loc-badge]][loc-url]
 </div>
 
@@ -17,11 +18,13 @@
 [crates-url]: https://crates.io/crates/ux-dataflow
 [license-badge]: https://img.shields.io/badge/license-MPL--2.0-blue.svg?style=flat-square
 [license-url]: https://github.com/angular-rust/ux-dataflow/blob/master/LICENSE
-[gitter-badge]: https://img.shields.io/gitter/room/angular_rust/angular_rust.svg?style=flat-square
+[gitter-badge]: https://img.shields.io/gitter/room/angular_rust/community.svg?style=flat-square
 [gitter-url]: https://gitter.im/angular_rust/community
-[rust-badge]: https://img.shields.io/badge/rustc-1.45-lightgrey.svg?style=flat-square
-[rust-url]: https://blog.rust-lang.org/2020/07/16/Rust-1.45.0.html
-[loc-badge]: https://tokei.rs/b1/github/angular-rust/ux-dataflow?category=code
+[tests-badge]: https://img.shields.io/github/workflow/status/angular-rust/ux-dataflow/Tests?label=tests&logo=github&style=flat-square
+[tests-url]: https://github.com/angular-rust/ux-dataflow/actions/workflows/tests.yml
+[codecov-badge]: https://img.shields.io/codecov/c/github/angular-rust/ux-dataflow?logo=codecov&style=flat-square&token=M7BW7mahNb
+[codecov-url]: https://codecov.io/gh/angular-rust/ux-dataflow
+[loc-badge]: https://img.shields.io/tokei/lines/github/angular-rust/ux-dataflow?style=flat-square
 [loc-url]: https://github.com/angular-rust/ux-dataflow
 
 **UX Dataflow** is a streaming capable data multiplexer that allows you to aggregate data and then process it using a Chain of Responsibility design pattern.
@@ -32,7 +35,9 @@ But during the development process, it became clear that a data processing mecha
 
 **UX Dataflow** is part of the Angular Rust framework.
 
-Angular Rust is a high productivity, `platform-agnostic` frontend framework for the [Rust language](https://www.rust-lang.org/). It now supports desktop and web development. Angular Rust currently uses GTK for desktop development and WebAssembly for web development. We are planning to add support for mobile development.
+**Angular Rust** is a high productivity, `platform-agnostic` frontend framework for the [Rust language](https://www.rust-lang.org/). It now supports desktop and web development. Angular Rust currently uses Clutter for desktop development and WebAssembly for web development. We are planning to add support for mobile development.
+
+![Angular Rust structure](https://dudochkin-victor.github.io/assets/angular-rust/structure.svg)
 
 ## Features
 
@@ -46,7 +51,7 @@ Angular Rust is a high productivity, `platform-agnostic` frontend framework for 
 
 ## Quick Start
 
-Install Angular Rust:
+Install UX Dataflow:
 
 	cargo add ux-dataflow
 
@@ -70,11 +75,11 @@ Install Angular Rust:
 
 We believe the wider community can create better code. The first tool for improving the community is to tell the developers about the project by giving it a star. More stars - more members.
 
- ![Star a repo](https://dudochkin-victor.github.io/assets/star-me-wide.svg)
+  [![](https://dudochkin-victor.github.io/assets/star-me-wide.svg)](https://github.com/angular-rust/ux-dataflow#top)
  
 Angular Rust is a community effort and we welcome all kinds of contributions, big or small, from developers of all backgrounds. We want the Angular Rust community to be a fun and friendly place, so please review our [Code of Conduct](CODE_OF_CONDUCT.md) to learn what behavior will not be tolerated.
 
-## New to Angular Rust?
+### New to Angular Rust?
 
 Start learning about the framework by helping us improve our [documentation](https://angular-rust.github.io/). Pull requests which improve test coverage are also very welcome.
 

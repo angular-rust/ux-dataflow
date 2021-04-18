@@ -15,7 +15,7 @@ impl<'a> DataColumn<'a> {
     }
 }
 
-// pub struct DataColumnCollection<M, D> 
+// pub struct DataColumnCollection<M, D>
 // where
 //     M: fmt::Display,
 // {
@@ -23,12 +23,12 @@ impl<'a> DataColumn<'a> {
 //     // table: DataTable<'a, M, D>,
 // }
 
-// impl<M, D> DataColumnCollection<M, D> 
+// impl<M, D> DataColumnCollection<M, D>
 // where
 //     M: fmt::Display,
 // {
 //     pub fn new(table: &DataTable<M, D>) -> Self {
-      
+
 //         Self {
 //             // base: Default::default(),
 //             // table
@@ -36,7 +36,7 @@ impl<'a> DataColumn<'a> {
 //     }
 // }
 
-// impl<'a, M, D> DataCollectionBase<DataColumn<'a>> for DataColumnCollection<M, D> 
+// impl<'a, M, D> DataCollectionBase<DataColumn<'a>> for DataColumnCollection<M, D>
 // where
 //     M: fmt::Display,
 // {
