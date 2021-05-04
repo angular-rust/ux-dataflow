@@ -10,8 +10,8 @@ pub mod collumn;
 pub mod row;
 
 #[derive(Clone, Debug)]
-pub struct Channel<'a> {
-    pub name: &'a str,
+pub struct Channel {
+    pub name: String,
     pub tag: u8,
     pub visible: bool,
 }
@@ -95,12 +95,12 @@ impl fmt::Display for DataCollectionChangeRecord {
 pub trait TableEntity {}
 
 #[derive(Clone)]
-pub struct DataStream<'a, M, D>
+pub struct DataStream<M, D>
 where
     M: fmt::Display,
     D: fmt::Display + Copy,
 {
-    pub meta: Vec<Channel<'a>>,
+    pub meta: Vec<Channel>,
     // data is renamed to frames
     pub frames: Vec<DataFrame<M, D>>,
     // column_index_by_name: HashMap<String, usize>,
@@ -111,7 +111,7 @@ where
     // rowsChangeController: StreamController<DataCollectionChangeRecord>,
 }
 
-impl<'a, M, D> Default for DataStream<'a, M, D>
+impl<M, D> Default for DataStream<M, D>
 where
     M: fmt::Display,
     D: fmt::Display + Copy,
@@ -124,7 +124,7 @@ where
     }
 }
 
-impl<'a, M, D> DataStream<'a, M, D>
+impl<M, D> DataStream<M, D>
 where
     M: fmt::Display,
     D: fmt::Display + Copy,
@@ -140,7 +140,7 @@ where
     /// All values in each column are expected to be of the same type,
     /// and all rows are expected to have the same length.
     // data is optional
-    pub fn new(meta: Vec<Channel<'a>>, frames: Vec<DataFrame<M, D>>) -> Self {
+    pub fn new(meta: Vec<Channel>, frames: Vec<DataFrame<M, D>>) -> Self {
         // let data_table = DataTable {
         //     // column_index_by_name: Default::default(),
         //     // columns: None,
