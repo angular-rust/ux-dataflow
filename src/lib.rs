@@ -2,6 +2,8 @@
 #![allow(unused_imports)]
 #![allow(dead_code)]
 
+#![doc(html_logo_url = "https://dudochkin-victor.github.io/assets/ux-dataflow/logo.svg")]
+
 use intmap::IntMap;
 use std::{collections::HashMap, fmt};
 
